@@ -5,7 +5,7 @@ print("\033[36m __  __         _           _  __\n"
       "|  \/  |__ _ __| |_ ___ _ _| |/ /___ _  _ \n"
       "| |\/| / _` (_-<  _/ -_) '_| ' </ -_) || |\n"
       "|_|  |_\__,_/__/\__\___|_| |_|\_\___|\_, |\n"
-      "-9.9.7                                |__/\n")
+      "-1.10.2                               |__/\n")
 
 currentPath = os.path.dirname(__file__)
 a = True
@@ -174,19 +174,27 @@ while a == True:
             except:
                 print(f'[-]No directory called {comandoL[1]}')
         elif "/help" == comandoL[0]:
-            print()
-            print("\033[30mHelp command for to help you to use commands\n\n"
+            print("\n\033[30mHelp command for to help you to use commands\n\n"
                   "\033[34mCommands:\n"
-                  "\033[31m /lck                           \033[37mEncrypt command, default parameters(empty) create a new file for the key on the CWD\n"
-                  "\033[31m /ulck                          \033[37mDecrypt command, default parameters(empty) read the key.key file on the CWD\n"
+                  "\033[31m /lck                           \033[37mEncrypt command, default parameters(empty) create the key file in the CWD\n"
+                  "\033[31m /ulck                          \033[37mDecrypt command, default parameters(empty) read the key file in the CWD\n"
                   "\033[31m /fldr                          \033[37mPrint all folders in a directory\n"
                   "\033[31m /file                          \033[37mPrint all files in a directory\n"
+                  "\033[31m /cat                           \033[37mPrint what is inside a file"
                   "\033[31m /help                          \033[37mPrint this list\n\n"
                   "\033[34mParameters:\n"
-                  "\033[31m -d                             \033[37mDefault parameter\n"
+                  "\033[31m -d                             \033[37mDefault directory\n"
                   "\033[31m -key                           \033[37mUsed after directory in /ulck and /lck Choose your own key, word to Fernet key\n"
-                  "\033[31m -kpath                         \033[37mChoose the key.key file path works with /ulck and /lck")
-            print()
+                  "\033[31m -kpath                         \033[37mChoose the key file path works with /ulck and /lck\n\n"
+                  "\033[37mExamples:\n"
+                  "\033[31m /lck -d -key lmao              \033[37mEncrypt all files in the CWD using the key 'lmao'\n"
+                  "\033[31m /lck -d -kpath ./test/         \033[37mEncrypt all files in the CWD and will save the key in /test/ folder"
+                  "\033[31m /ulck ./test/ -kpath /home/    \033[37mDecrypt all files in /test/ with the key located in /home/\n"
+                  "\033[31m /fldr /home/user/              \033[37mPrint all folders in /user/ folder\n")
+        elif "/cat" == comandoL[0]:
+            with open(comandoL[1], "rb") as file:
+                inside = file.read()
+            print(f"\033[32m{str(inside)}")
         #Com Chave
         try:
             if "/ulck" == comandoL[0] and "-key" == comandoL[2]:

@@ -15,8 +15,9 @@ print("\n"
       "\033[33m     \   \    \033[36m  \            /  |  |  |  | |      /     |  |  |  |\n"
       "\033[33m .----)   |   \033[36m   \    /\    /   |  `--'  | |  |\  \----.|  '--'  |\n"
       "\033[33m |_______/    \033[36m    \__/  \__/     \______/  | _| `._____||_______/ \n"
-      "-V1.10.3\n")
+      "-V1.10.4\n")
 
+currentPath = os.path.dirname(__file__)
 a = True
 while a == True:
     files = []
@@ -28,13 +29,13 @@ while a == True:
             try:
                 if comandoL[1] == "-d":
                     for file in os.listdir():
-                        if file == "MasterSword.py" or file == "chave.key":
+                        if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                             continue
                         if os.path.isfile(file):
                             files.append(file)
                 else:
                     for file in os.listdir(comandoL[1]):
-                        if file == "MasterSword.py" or file == "chave.key":
+                        if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                             continue
                         if os.path.isfile(comandoL[1]+"\\"+file):
                             files.append(file)
@@ -84,7 +85,7 @@ while a == True:
             try:
                 if comandoL[1] == "-d":
                     for file in os.listdir():
-                        if file == "MasterSword.py" or file == "chave.key" or file == "desktop.ini":
+                        if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                             continue
                         if os.path.isfile(file):
                             files.append(file)
@@ -108,7 +109,7 @@ while a == True:
                         print("[-]Error on Encrypt")
                 else:
                     for file in os.listdir(comandoL[1]):
-                        if file == "MasterSword.py" or file == "chave.key" or file == "desktop.ini":
+                        if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                             continue
                         if os.path.isfile(comandoL[1]+"\\"+file):
                             files.append(file)
@@ -210,13 +211,13 @@ while a == True:
                 try:
                     if comandoL[1] == "-d":
                         for file in os.listdir():
-                            if file == "MasterSword.exe" or file == "chave.key":
+                            if file == "MasterSword.exe" or file == "chave.key" or file == "requirements.txt":
                                 continue
                             if os.path.isfile(file):
                                 files.append(file)
                     else:
                         for file in os.listdir(comandoL[1]):
-                            if file == "MasterSword.exe" or file == "chave.key":
+                            if file == "MasterSword.exe" or file == "chave.key" or file == "requirements.txt":
                                 continue
                             if os.path.isfile(comandoL[1]+"\\"+file):
                                 files.append(comandoL[1]+"\\"+file)
@@ -248,13 +249,13 @@ while a == True:
                 try:
                     if comandoL[1] == "-d":
                         for file in os.listdir():
-                            if file == "MasterSword.py" or file == "chave.key":
+                            if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                                 continue
                             if os.path.isfile(file):
                                 files.append(file)
                     else:
                         for file in os.listdir(comandoL[1]):
-                            if file == "MasterSword.py" or file == "chave.key":
+                            if file == "MasterSword.py" or file == "chave.key" or file == "requirements.txt":
                                 continue
                             if os.path.isfile(comandoL[1]+"\\"+file):
                                 files.append(comandoL[1]+"\\"+file)

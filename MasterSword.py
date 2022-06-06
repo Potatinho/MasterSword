@@ -17,7 +17,6 @@ print("\n"
       "\033[33m |_______/    \033[36m    \__/  \__/     \______/  | _| `._____||_______/ \n"
       "-V1.10.3\n")
 
-currentPath = os.path.dirname(__file__)
 a = True
 while a == True:
     files = []

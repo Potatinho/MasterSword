@@ -47,13 +47,22 @@ while a == True:
 
                     if login == senha:
                         try:
-                            for file in files:
-                                with open(comandoL[1]+"\\"+file, "rb") as arquivos:
-                                    dentro = arquivos.read()
-                                dentro_nao_segredo = Fernet(chave_segredo).decrypt(dentro)
-                                with open(comandoL[1]+"\\"+file, "wb") as arquivos:
-                                    arquivos.write(dentro_nao_segredo)
-                            print("[-]Decrypt Succesfull")
+                            if comandoL[1] == "-d":
+                                for file in files:
+                                    with open(file, "rb") as arquivos:
+                                        dentro = arquivos.read()
+                                    dentro_nao_segredo = Fernet(chave_segredo).decrypt(dentro)
+                                    with open(file, "wb") as arquivos:
+                                        arquivos.write(dentro_nao_segredo)
+                                print("[-]Decrypt Succesfull")
+                            else:
+                                for file in files:
+                                    with open(comandoL[1]+"\\"+file, "rb") as arquivos:
+                                        dentro = arquivos.read()
+                                    dentro_nao_segredo = Fernet(chave_segredo).decrypt(dentro)
+                                    with open(comandoL[1]+"\\"+file, "wb") as arquivos:
+                                        arquivos.write(dentro_nao_segredo)
+                                print("[-]Decrypt Succesfull")
                         except:
                             print("[-]Decrypt Succesfull")
                     else:
@@ -168,15 +177,15 @@ while a == True:
             print()
             print("\033[30mHelp command for to help you to use commands\n\n"
                   "\033[34mCommands:\n"
-                  "\033[31m /lck                           \033[30mEncrypt command, default parameters(empty) create a new file for the key on the CWD\n"
-                  "\033[31m /ulck                          \033[30mDecrypt command, default parameters(empty) read the key.key file on the CWD\n"
-                  "\033[31m /fldr                          \033[30mPrint all folders in a directory\n"
-                  "\033[31m /file                          \033[30mPrint all files in a directory\n"
-                  "\033[31m /help                          \033[30mPrint this list\n\n"
+                  "\033[31m /lck                           \033[37mEncrypt command, default parameters(empty) create a new file for the key on the CWD\n"
+                  "\033[31m /ulck                          \033[37mDecrypt command, default parameters(empty) read the key.key file on the CWD\n"
+                  "\033[31m /fldr                          \033[37mPrint all folders in a directory\n"
+                  "\033[31m /file                          \033[37mPrint all files in a directory\n"
+                  "\033[31m /help                          \033[37mPrint this list\n\n"
                   "\033[34mParameters:\n"
-                  "\033[31m -d                             \033[30mDefault parameter\n"
-                  "\033[31m -key                           \033[30mUsed after directory in /ulck and /lck Choose your own key, word to Fernet key\n"
-                  "\033[31m -kpath                         \033[30mChoose the key.key file path works with /ulck and /lck")
+                  "\033[31m -d                             \033[37mDefault parameter\n"
+                  "\033[31m -key                           \033[37mUsed after directory in /ulck and /lck Choose your own key, word to Fernet key\n"
+                  "\033[31m -kpath                         \033[37mChoose the key.key file path works with /ulck and /lck")
             print()
         #Com Chave
         try:

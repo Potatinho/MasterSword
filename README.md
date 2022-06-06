@@ -3,3 +3,7 @@
 **Disclaimer:** This project should be used for authorized testing or educational purposes only.
 
 **MasterSword** is a console-based ransomware coded with *python3.8*, with 5 commands, it gets the job done
+ 
+ ## Planned
+ - GUI using pygame
+ - EXE version

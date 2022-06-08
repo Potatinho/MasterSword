@@ -11,8 +11,8 @@
 ## Planned
   *Every help is appreciated :)*
 
- - GUI using pygame
  - EXE version
+   - GUI using pygame
  - Bash version
  - More parameters
    - -s -> Spread in the subfolders of a directory

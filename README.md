@@ -13,6 +13,7 @@
 
  - GUI using pygame
  - EXE version
+ - Bash version
  - More parameters
    - -s -> Spread in the subfolders of a directory
    - -admlgn -> Use a administrator login to encrypt blocked files
